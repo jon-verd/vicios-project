@@ -1,8 +1,10 @@
 
 import './App.css';
-// import { BrowserRouter } from 'react-router-dom';
-// import { Route, Switch } from 'react-router';
+import { Routes, Route } from 'react-router-dom';
 import React from 'react';
+import { Home } from './Home';
+// import { FourOhFour } from './fourohfour';
+import { About } from './About';
 // import {Provider} from "react-redux";
 // import { Home } from './frontend/home/Home';
 // import { FourOhFour } from './fourohfour';
@@ -24,12 +26,25 @@ import React from 'react';
 
 
 
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>Hello, Vicios</h1>
+//     </div>
+//   );
+// }
+
+// export default App;
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello, Vicios</h1>
+    <div className='App'>
+      <Routes>
+          <Route path='/' element={ <Home />} />
+          <Route path='about' element={<About />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

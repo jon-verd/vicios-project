@@ -1,18 +1,19 @@
+
 import React from "react"
-import {Container, Row, Col, Image, NavLink} from "react-bootstrap";
 
 
 
 export function Home() {
+
+    const Title = <div className="m-6 font-serif leading-loose mx-auto sm:text-9xl text-6xl w-full h-full text-gray-900 font-bold hover:italic tracking-widest flex-auto">VICIOS</div>
+    
+
     return (
         <>
-            <div>
-                <Container className={'p-4 m-3'}>
-                    <header>
-                        <h1 className="display1"> VICIOS </h1>
-                    </header>
-                </Container>
+            <div class="sm:container px-4">
+                {Title}
             </div>
+            <div>Test</div>
         </>
     )
 }

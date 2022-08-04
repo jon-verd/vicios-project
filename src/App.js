@@ -8,6 +8,9 @@ import { About } from './About';
 // import {Provider} from "react-redux";
 // import { Home } from './frontend/home/Home';
 // import { FourOhFour } from './fourohfour';
+import MyNavbar from './Navbar';
+import { Shop } from './Shop';
+import { Catalog } from './Catalog';
 
 
 
@@ -39,9 +42,12 @@ import { About } from './About';
 function App() {
   return (
     <div className='App'>
+      < MyNavbar />
       <Routes>
           <Route path='/' element={ <Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/catalog' element={<Catalog />} />
       </Routes>
     </div>
   )

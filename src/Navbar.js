@@ -3,37 +3,79 @@ import { Home } from "./Home";
 import { About } from "./About";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import { ReactDOM } from "react";
+import { Nav } from "react-bootstrap";
 
 
 
 
-export function currentTime() {
-    let date = new Date(); 
-    let hh = date.getHours();
-    let mm = date.getMinutes();
-    let ss = date.getSeconds();
-    let session = "AM";
+// export function CurrentTime() {   
+//         let date = new Date(); 
+//         let hh = date.getHours();
+//         let mm = date.getMinutes();
+//         let ss = date.getSeconds();
+//         let session = "AM";
 
-    if(hh == 0){
-        hh = 12;
-    }
-    if(hh > 12){
-        hh = hh - 12;
-        session = "PM";
-    }
+//         if(hh == 0){
+//             hh = 12;
+//         }
+//         if(hh > 12){
+//             hh = hh - 12;
+//             session = "PM";
+//         }
 
-    hh = (hh < 10) ? "0" + hh : hh;
-    mm = (mm < 10) ? "0" + mm : mm;
-    ss = (ss < 10) ? "0" + ss : ss;
+//         hh = (hh < 10) ? "0" + hh : hh;
+//         mm = (mm < 10) ? "0" + mm : mm;
+//         ss = (ss < 10) ? "0" + ss : ss;
 
-    let time = hh + ":" + mm + ":" + ss + " " + session;
+//         let time = hh + ":" + mm + ":" + ss + " " + session;
 
-    document.getElementById("clock").innerText = time; 
-    let t = setTimeout(function(){ currentTime() }, 1000);
-};
+//         document.getElementById("clock").innerText = time; 
+//         // let rootTime = ReactDOM.createRoot(document.getElementById("clock"));
+//         // rootTime = time
+
+//         let t = setTimeout(function(){ CurrentTime() }, 1000);
+
+// };
+
+export function NavClock() {
+    const [clockState, setClockState] = useState()
+
+    useEffect(() => {
+        setInterval(() => {
+            const date = new Date();
+            setClockState(date.toLocaleTimeString());
+        }, 1000);
+    }, []);
+
+    return(
+        <div className="py-3 md:py-5 -md:invisible font-serif font-bold hover:italic text-xl">
+            {clockState}
+        </div>
+    )
+
+    // const clockID = ReactDOM.createRoot(
+    //     document.getElementById(clockID)
+    // );
+    // function clock() {
+    //     const ticktock = (
+    //         <div>
+    //             {new Date().toLocaleTimeString()}
+    //         </div>
+    //     );
+    //     clockID.render(ticktock);
+    // }
+    // setInterval(() => {
+        
+    // }, clock, 1000);
+
+}
 
 export default function MyNavbar() {
     const [navbar, setNavbar] = useState(false);
+
+
 
     return (
         <nav className="w-full bg-white shadow">
@@ -81,8 +123,8 @@ export default function MyNavbar() {
                         </div>
                     </div>
                 </div>
-                <div id="clock" className="flex justify-between py-3 md:py-5 -md:invisible">
-                    <currentTime/>
+                <div>
+                    <NavClock/>
                 </div>
                 <div>
                     <div

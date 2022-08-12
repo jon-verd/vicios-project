@@ -9,7 +9,7 @@ import { Nav } from "react-bootstrap";
 
 
 
-
+//  This bit of code was my first attempt at making a function clock,it failed for several reasons. I might still use this to edit the clock in the future (remove seconds) so I will keep it for now.
 // export function CurrentTime() {   
 //         let date = new Date(); 
 //         let hh = date.getHours();
@@ -55,21 +55,6 @@ export function NavClock() {
         </div>
     )
 
-    // const clockID = ReactDOM.createRoot(
-    //     document.getElementById(clockID)
-    // );
-    // function clock() {
-    //     const ticktock = (
-    //         <div>
-    //             {new Date().toLocaleTimeString()}
-    //         </div>
-    //     );
-    //     clockID.render(ticktock);
-    // }
-    // setInterval(() => {
-        
-    // }, clock, 1000);
-
 }
 
 export default function MyNavbar() {
@@ -78,7 +63,7 @@ export default function MyNavbar() {
 
 
     return (
-        <nav className="w-full bg-white shadow">
+        <nav className="w-full opacity-100 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -153,7 +138,7 @@ export default function MyNavbar() {
 
 
 
-
+// Original NavBar for reference.
 // export function MyNavbar() {
 //         return (
 //             <>

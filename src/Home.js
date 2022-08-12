@@ -13,6 +13,9 @@ export function Title() {
     )
 } 
     
+export function SectionOne() {
+    
+}
 
 export function Home() {
 
